@@ -1,6 +1,60 @@
 class TrainersController < ApplicationController
-  get '/' do
-    erb :'index'
+
+
+  #displays the user signup
+  #only shows the sign-up page if user is not logged in if they are logged in, redirects them to their tweets
+    get "/" do
+    if !logged_in?
+      erb :"index"
+    else
+      redirect '/pokemon'
+    end
   end
 
-end
+  #Trainers submission form is loaded via the POST request to /signup
+    post "/" do
+      if params[:username]== "" || params[:name]== "" || params[:password] == ""
+       redirect '/'
+     else
+      @trainer = Trainer.new(name: params[:name], username: params[:username], password: params[:password])
+    end
+      if @trainer.save
+        @trainer.save
+        session[:trainer_id] = @trainer.id
+        redirect to "/pokemon"
+      else
+      erb :'index', locals: {message: "USERNAME ALREADY EXISTS! Please choose new username"}
+    end
+  end
+
+  #renders the login page for a user
+  #doesn't let user view the login page if already logged in"
+    get "/login" do
+      if logged_in?
+      redirect "/pokemon"
+    else
+      erb :'/trainers/login'
+      end
+    end
+
+  #login form is loaded via post /login request
+    post "/login" do
+      trainer = Trainer.find_by(:username => params[:username])
+      if trainer && trainer.authenticate(params[:password])
+          session[:trainer_id] = trainer.id
+          redirect to "/pokemon"
+      else
+          redirect "/"
+      end
+    end
+
+    get '/logout' do
+       if logged_in?
+         session.destroy
+         redirect '/login'
+       else
+         redirect '/'
+       end
+     end
+
+  end #ends class
