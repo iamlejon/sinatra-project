@@ -1,115 +1,17 @@
+<h1>Welcome! <%= @trainer.name %> </h1>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokemon Trainers!</title>
+<div class="col-sm-6">
+<img src="<%=@trainer.photo%>" style="width: 50%;">
+</div>
 
-    <!-- Bootstrap -->
-    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-
-    <!--Custom Style Sheet-->
-    <link href="stylesheets/style.css" rel="stylesheet">
-  </head>
-  <body>
-
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">POKEMON!</a>
-                  </div>
-
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!-- main nav links -->
-                    <ul class="nav navbar-nav">
-                      <li class="active"><a href="#">Catch new Pokemon <span class="sr-only">(current)</span></a></li>
-                      <li><a href="#">View Pokemon</a></li>
-                      <li><a href="#">Edit Pokemon</a></li>
-                      <li><a href="#">Logout</a></li>
-                   </ul>
-                  </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-              </nav>
-        </div> <!--column sm 12-->
-      </div> <!--row-->
-
-      <div class="row">
-        <div class="col-sm-12">
-          <figure>
-            <img src="https://i.imgur.com/4ZubWSZ.png" alt="A beautiful living room." title="Welcome to Exceptional Realty Group">
-            <figcaption></figcaption>
-          </figure>
-
-<!--Form -->
-  <p><div class="row">
-    <div class="col-sm-12" style="">
-      <% @trainers.each do |trainer| %>
-      <%= trainer.name %>
-      <br>
-      <% end %>
-
-        </div>
-    </div>
-
-
-      </div> <!--column sm 12-->
-    </div> <!--row-->
-
-
-    <div class="row">
-      <div class="col-sm-8">
-        <figure>
-        <img src="https://i.imgur.com/1bBDal2.jpg">
-        </figure>
-    </div> <!--column sm 8-->
-
-    <div class="col-sm-4">
-      <h3>Already a trainer? Login</h3>
-      <div class="row">
-      <div class="col-md-6" style="">
-        <div class="form-group" style="position: static;">
-            <label for="input-id-2">Username</label>
-            <input type="text" name="username" class="form-control" id="input-id-2" placeholder="username">
-        </div>
-          <div class="form-group" style="position: static;">
-              <label for="input-password-1">Password</label>
-              <input type="password" class="form-control" id="input-password-1" placeholder="Password">
-              <p class="help-block">Example block-level help text here.</p>
-          </div>
-          <div class="form-group" style="padding-right: 20px; position: static;">
-              <button type="submit" class="btn btn-default">Login</button>
-          </div>
-      </div>
-      <div class="col-md-6" style=""></div>
-  </div>
-    </div> <!--column sm 4-->
-</div> <!--row-->
-
-
-  </div><!--row-->
-
-
-
-      </div> <!-- container-->
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+<div class="col-sm-6">
+<strong>Trainer Name: <%= @trainer.name%></strong><br>
+<strong>Trainer Username: <%= @trainer.username%></strong><br>
+<strong>Trainer Level: <%= @trainer.level%></strong><br>
+<strong>Trainer Bio:</strong>
+<textarea rows="6" cols="60">
+<%=@trainer.bio%>
+Ash Ketchum is the main protagonist of the Pokémon anime series who has always dreamed of becoming a Pokémon Master. As soon as he turned ten years old, he rushed to Professor Oak's Laboratory to get his first Pokémon. He is the first human character to be introduced in the series. Originally wanting to choose Squirtle, Ash ended up receiving the Pokémon Pikachu, as he arrived late leaving him with no other starters to choose from. He sets onto his adventure later in the day.
+He is currently also the only character shown to have been to all of the regions.
+</textarea><br>
+</div>

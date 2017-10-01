@@ -7,21 +7,22 @@ class TrainersController < ApplicationController
     if !logged_in?
       erb :"index"
     else
-      redirect '/pokemon'
+      redirect '/pokemon/:id'
     end
   end
 
   #Trainers submission form is loaded via the POST request to /signup
     post "/" do
-      if params[:username]== "" || params[:name]== "" || params[:password] == ""
+      if params[:username]== "" || params[:name]== "" || params[:password]== "" || params[:photo]== ""
        redirect '/'
      else
-      @trainer = Trainer.new(name: params[:name], username: params[:username], password: params[:password])
+      @trainer = Trainer.new(name: params[:name], username: params[:username], password: params[:password], photo: params[:photo])
+      binding.pry
     end
       if @trainer.save
         @trainer.save
         session[:trainer_id] = @trainer.id
-        redirect to "/pokemon"
+        redirect to "/pokemon/:id"
       else
       erb :'index', locals: {message: "USERNAME ALREADY EXISTS! Please choose new username"}
     end
@@ -31,20 +32,21 @@ class TrainersController < ApplicationController
   #doesn't let user view the login page if already logged in"
     get "/login" do
       if logged_in?
-      redirect "/pokemon"
+      redirect "/pokemon/:id"
     else
-      erb :'/trainers/login'
+      erb :'/trainers/index'
       end
     end
 
   #login form is loaded via post /login request
     post "/login" do
       trainer = Trainer.find_by(:username => params[:username])
+      binding.pry
       if trainer && trainer.authenticate(params[:password])
           session[:trainer_id] = trainer.id
-          redirect to "/pokemon"
+          redirect to "/pokemon/:id"
       else
-          redirect "/"
+          redirect "index"
       end
     end
 

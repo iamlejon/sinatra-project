@@ -1,155 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokemon Trainers!</title>
+<form method="post" action="/">
+ <div class="form-group" style="">
+     <label for="name">Name</label>
+     <input type="name" name="name" class="form-control" id="name" placeholder="name">
+ </div>
+ <div class="form-group" style="position: static;">
+     <label for="username">Username</label>
+     <input type="username" name="username" class="form-control" id="username" placeholder="username">
+ </div>
+ <p class="help-block" style="color:red;"><strong>  <% unless locals.empty? %>
+     <%= message %>
+   <% end %></strong></p>
+ <div class="form-group" style="position: static;">
+     <label for="password">Password</label>
+     <input type="password" name="password" class="form-control" id="password" placeholder="password">
+ </div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+ <div class="form-group" id="inner" style="position: static;">
+     <input type="radio" name="photo" class="radio_item" id="image1" value="https://i.imgur.com/P1kI4DZ.png">
+     <label class="label_item" for="image1"><img src="https://i.imgur.com/P1kI4DZ.png"></label>
 
-    <!-- Bootstrap -->
-    <link href="stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet">
-
-    <!--Custom Style Sheet-->
-
-
-    <link href="stylesheets/style.css" type="text/css" rel="stylesheet">
-
-
-  </head>
-  <body>
-
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">POKEMON!</a>
-                  </div>
-
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!-- main nav links -->
-                    <ul class="nav navbar-nav">
-                      <li class="active"><a href="#">About <span class="sr-only">(current)</span></a></li>
-                      <li><a href="new-properties.html">New Properties</a></li>
-                      <li><a href="listings.html">Listings</a></li>
-                      <li><a href="market-report.html">Market Report</a></li>
-                   </ul>
-                  </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-              </nav>
-        </div> <!--column sm 12-->
-      </div> <!--row-->
-
-      <div class="row">
-        <div class="col-sm-12">
-          <figure>
-            <img src="https://i.imgur.com/4ZubWSZ.png" alt="A beautiful living room." title="Welcome to Exceptional Realty Group">
-            <figcaption>Become a Pokemon Trainer!</figcaption>
-          </figure>
-        </div> <!--column sm 12-->
-      </div> <!--row-->
-
-<!--Form -->
-  <div class="row">
-    <div class="col-sm-12">
-       <form method="post" action="/">
-        <div class="form-group" style="">
-            <label for="name">Name</label>
-            <input type="name" name="name" class="form-control" id="name" placeholder="name">
-        </div>
-        <div class="form-group" style="position: static;">
-            <label for="username">Username</label>
-            <input type="username" name="username" class="form-control" id="username" placeholder="username">
-        </div>
-        <p class="help-block" style="color:red;"><strong>  <% unless locals.empty? %>
-            <%= message %>
-          <% end %></strong></p>
-        <div class="form-group" style="position: static;">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="password">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="form-group" id="inner" style="position: static;">
-            <input type="radio" name="image" class="radio_item" id="image1" value="image">
-            <label class="label_item" for="image1"><img src="https://i.imgur.com/P1kI4DZ.png"></label>
-
-            <input type="radio" name="image" class="radio_item" id="image2" value="image">
-            <label class="label_item" for="image2"><img src="https://i.imgur.com/fGUlH1y.png" style="padding: 30px;"></label>
-            <input type="radio" name="image" class="radio_item" id="image4" value="image">
-            <label class="label_item" for="image4"><img src="https://i.imgur.com/st9wzwT.png"></label>
-            <input type="radio" name="image" class="radio_item" id="image3" value="image">
-            <label class="label_item" for="image3"><img src="https://i.imgur.com/HdkXWMe.png"></label>
-            <input type="radio" name="image" class="radio_item" id="image5" value="image">
-            <label class="label_item" for="image5"><img src="https://i.imgur.com/SQgnKAs.png"></label>
+     <input type="radio" name="photo" class="radio_item" id="image2" value="https://i.imgur.com/fGUlH1y.png">
+     <label class="label_item" for="image2"><img src="https://i.imgur.com/fGUlH1y.png" style="padding: 30px;"></label>
+     <input type="radio" name="photo" class="radio_item" id="image4" value="https://i.imgur.com/st9wzwT.png">
+     <label class="label_item" for="image4"><img src="https://i.imgur.com/st9wzwT.png"></label>
+     <input type="radio" name="photo" class="radio_item" id="image3" value="https://i.imgur.com/HdkXWMe.png">
+     <label class="label_item" for="image3"><img src="https://i.imgur.com/HdkXWMe.png"></label>
+     <input type="radio" name="photo" class="radio_item" id="image5" value="https://i.imgur.com/SQgnKAs.png">
+     <label class="label_item" for="image5"><img src="https://i.imgur.com/SQgnKAs.png"></label>
 
 
 
-        </div>
-        </div>
+ </div>
+ </div>
 
-        <div class="form-group" style="padding-right: 10px; position: static;">
-            <button type="submit" class="btn btn-default" id="button3">Submit</button>
-          </form>
-        </div>
-    </div>
-
-
-
-
+ <div class="form-group" style="padding-right: 10px; position: static;">
+     <button type="submit" class="btn btn-default" id="button3">Submit</button>
+   </form>
+ </div>
+</div>
 
     <div class="row">
-      <div class="col-sm-8">
-        <figure>
-        <img src="https://i.imgur.com/1bBDal2.jpg">
-        </figure>
+    <div class="col-sm-8">
+     <figure>
+     <img src="https://i.imgur.com/1bBDal2.jpg">
+     </figure>
     </div> <!--column sm 8-->
 
-    <div class="col-sm-4">
+  <div class="col-sm-4">
       <h3>Already a trainer? Login</h3>
       <div class="row">
-      <div class="col-md-6" style="">
-        <div class="form-group" style="position: static;">
+        <div class="col-md-6" style="">
+          <div class="form-group" style="position: static;">
+
+            <!-- STARTS LOGIN FORM -->
+            <form method="post" action="/login">
             <label for="input-id-2">Username</label>
             <input type="text" name="username" class="form-control" id="input-id-2" placeholder="username">
         </div>
           <div class="form-group" style="position: static;">
               <label for="input-password-1">Password</label>
-              <input type="password" class="form-control" id="input-password-1" placeholder="Password">
-              <p class="help-block">Example block-level help text here.</p>
+              <input type="text" name="password" class="form-control" id="input-password-1" placeholder="password">
           </div>
           <div class="form-group" style="padding-right: 20px; position: static;">
               <button type="submit" class="btn btn-default">Login</button>
+            </form>
           </div>
       </div>
       <div class="col-md-6" style=""></div>
-  </div>
+    </div>
     </div> <!--column sm 4-->
-</div> <!--row-->
-
-
-  </div><!--row-->
-
-
-
-      </div> <!-- container-->
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
