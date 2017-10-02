@@ -34,19 +34,18 @@ class TrainersController < ApplicationController
       if logged_in?
       redirect "/pokemon/:id"
     else
-      erb :'/trainers/index'
+      erb :'/trainers/login'
       end
     end
 
   #login form is loaded via post /login request
     post "/login" do
       trainer = Trainer.find_by(:username => params[:username])
-      binding.pry
       if trainer && trainer.authenticate(params[:password])
           session[:trainer_id] = trainer.id
           redirect to "/pokemon/:id"
       else
-          redirect "index"
+          erb :'/trainers/login', locals: {message: "Please login with valid username/password before continuing"}
       end
     end
 

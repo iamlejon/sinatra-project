@@ -2,6 +2,7 @@ class PokemonController < ApplicationController
 
    	get '/pokemon' do
    		if logged_in?
+        @pokemons = Pokemon.all
    			erb :'/pokemon/index'
    		else
    			redirect to '/login'
@@ -18,10 +19,11 @@ class PokemonController < ApplicationController
    	end
 
     post '/pokemon/new' do
-          @pokemon = Pokemon.new(name: params[:name],type: params[:type],attacks: params[:attacks])
+          @pokemons = Pokemon.all
+          @pokemon = Pokemon.new(name: params[:name],breed: params[:breed],attacks: params[:attacks], bio: params[:bio], photo: params[:photo])
 binding.pry
           @pokemon.save
-          redirect to "/pokemon/#{@pokemon.id}"
+          redirect to "/pokemon/:id"
 
       end
 
@@ -32,12 +34,14 @@ binding.pry
    		end
    		#@trainer = Trainer.find_by_id(params[:id])
       @trainer = Trainer.find_by_id(current_user.id)
+      @pokemons = Pokemon.all
 
    		erb :'pokemon/index'
    	end
 
     get '/pokemon/:id/edit' do
       if logged_in?
+        @pokemons = Pokemon.all
         @pokemon = Pokemon.find_by_id(params[:id])
         if @pokemon.user_id == current_user.id
          erb :'pokemon/edit'
