@@ -29,7 +29,7 @@
 </div> <!--ends col-sm-6-->
 
 <div class="col-sm-6">
-  <button class="buttoner button20">RELEASE POKEMON?</button>
+  <button class="buttoner button20">EDIT TRAINER BIO?</button>
 </div> <!--ends col-sm-6-->
 </div> <!-- ends col-sm-12 -->
 
@@ -41,6 +41,10 @@
   	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
   <h3><%= pokemon.name %></h3>
   <img src="<%=pokemon.photo%>" style="width: 50%;"><br>
+  <form method="post" action="/pokemon/<%=pokemon.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Release">
+</form>
 </div> <!--ends col-sm-6-->
 	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="display: inline-block;">
     <h3> Pokemon Stats: </h3>

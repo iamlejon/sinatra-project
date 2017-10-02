@@ -21,6 +21,7 @@ class PokemonController < ApplicationController
     post '/pokemon/new' do
           @pokemons = Pokemon.all
           @pokemon = Pokemon.new(name: params[:name],breed: params[:breed],attacks: params[:attacks], bio: params[:bio], photo: params[:photo])
+          @pokemon.trainer_id = current_user.id
 binding.pry
           @pokemon.save
           redirect to "/pokemon/:id"
@@ -43,10 +44,10 @@ binding.pry
       if logged_in?
         @pokemons = Pokemon.all
         @pokemon = Pokemon.find_by_id(params[:id])
-        if @pokemon.user_id == current_user.id
+        if @pokemon.trainer_id == current_user.id
          erb :'pokemon/edit'
         else
-          redirect to '/pokemon'
+          redirect to '/pokemon/:id'
         end
       else
         redirect to '/login'
@@ -68,13 +69,15 @@ binding.pry
 
 
    	delete '/pokemon/:id/delete' do
-   		@pokemon = pokemon.find(params[:id])
+      @pokemons = Pokemon.all
+   		@pokemon = @pokemons.find(params[:id])
+      binding.pry
    		if !logged_in?
    			redirect to '/login'
-   		elsif current_user.pokemons.include?(@pokemon)
-   			pokemon.find(params[:id]).destroy
+   		elsif current_user.id == @pokemon.trainer_id
+   			@pokemon.destroy
    		end
 
-   		redirect to '/pokemon'
+   		redirect to '/pokemon/:id'
    	end
    end
