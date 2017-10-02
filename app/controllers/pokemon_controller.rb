@@ -22,19 +22,19 @@ class PokemonController < ApplicationController
           @pokemons = Pokemon.all
           @pokemon = Pokemon.new(name: params[:name],breed: params[:breed],attacks: params[:attacks], bio: params[:bio], photo: params[:photo])
           @pokemon.trainer_id = current_user.id
-binding.pry
           @pokemon.save
-          redirect to "/pokemon/:id"
+          redirect to "/pokemon/home"
 
       end
 
 
-   	get '/pokemon/:id' do
+   	get '/pokemon/home' do
    		if !logged_in?
    			redirect '/login'
    		end
    		#@trainer = Trainer.find_by_id(params[:id])
-      @trainer = Trainer.find_by_id(current_user.id)
+      @trainers = Trainer.all
+      @trainer = @trainers.find_by_id(current_user.id)
       @pokemons = Pokemon.all
 
    		erb :'pokemon/index'
@@ -43,11 +43,11 @@ binding.pry
     get '/pokemon/:id/edit' do
       if logged_in?
         @pokemons = Pokemon.all
-        @pokemon = Pokemon.find_by_id(params[:id])
-        if @pokemon.trainer_id == current_user.id
-         erb :'pokemon/edit'
+        @pokemon = @pokemons.find(params[:id])
+        if current_user.id == @pokemon.trainer_id
+         erb :'pokemon/edit_pokemon'
         else
-          redirect to '/pokemon/:id'
+          redirect to '/pokemon/home'
         end
       else
         redirect to '/login'
@@ -55,29 +55,24 @@ binding.pry
     end
 
     patch '/pokemon/:id' do
-     if params[:name] == ""
-       redirect to "/pokemon/#{params[:id]}/edit"
-     else
-       @pokemon = pokemon.find_by_id(params[:id])
+       @pokemons = Pokemon.all
+       @pokemon = @pokemons.find_by_id(params[:id])
        @pokemon.name = params[:name]
-       @pokemon.type = params[:type]
-       @pokemon.attacks = params[:attacks]
        @pokemon.save
-       redirect to "/pokemon/#{@pokemon.id}"
-     end
+       redirect to "/pokemon/home"
+
    end
 
 
    	delete '/pokemon/:id/delete' do
       @pokemons = Pokemon.all
    		@pokemon = @pokemons.find(params[:id])
-      binding.pry
    		if !logged_in?
    			redirect to '/login'
    		elsif current_user.id == @pokemon.trainer_id
    			@pokemon.destroy
    		end
 
-   		redirect to '/pokemon/:id'
+   		redirect to '/pokemon/home'
    	end
    end
