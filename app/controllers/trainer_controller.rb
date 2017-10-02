@@ -17,7 +17,6 @@ class TrainersController < ApplicationController
        redirect '/'
      else
       @trainer = Trainer.new(name: params[:name], username: params[:username], password: params[:password], photo: params[:photo])
-      binding.pry
     end
       if @trainer.save
         @trainer.save
