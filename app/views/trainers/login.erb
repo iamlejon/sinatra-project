@@ -1,24 +1,21 @@
 <div class="col-sm-12">
-    <h3>Welcome Pokemon Trainer! Login below</h3>
-    <div class="row">
-      <div class="col-md-6" style="">
-        <div class="form-group" style="position: static;">
-          <form method="post" action="/login">
-          <label for="input-id-2">Username</label>
-          <input type="text" name="username" class="form-control" id="input-id-2" placeholder="username">
-      </div>
-        <div class="form-group" style="position: static;">
-            <label for="input-password-1">Password</label>
-            <input type="password" name="password" class="form-control" id="input-password-1" placeholder="Password">
+  <h3>Welcome Pokemon Trainer! Login below</h3>
+  <div class="row">
+    <div class="col-md-6" style="">
+      <div class="form-group" style="position: static;">
+        <form method="post" action="/login">
+          <label for="login-username">Username</label>
+          <input type="text" name="username" class="form-control" id="login-username" placeholder="username">
+          <label for="login-password">Password</label>
+          <input type="password" name="password" class="form-control" id="login-password" placeholder="Password">
+              <% unless locals.empty? %>
+              <p class="help-block" style="color:red;"><strong>
+              <%= message %></strong>
+              <% end %></p>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+      </div> <!--ends form group-->
+   </div><!--ends-col-md-6-->
 
-            <p class="help-block" style="color:red;"><strong>  <% unless locals.empty? %>
-                <%= message %>
-              <% end %></strong></p>
-        <div class="form-group" style="padding-right: 20px; position: static;">
-            <button type="submit" class="btn btn-default">Login</button>
-          </form>
-        </div>
-    </div>
-
-  </div>
-  </div> <!--column sm 4-->
+  </div><!--ends row-->
+</div> <!--col-sm-12-->

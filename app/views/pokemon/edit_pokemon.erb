@@ -1,9 +1,7 @@
 <h2> Rename Pokemon </h2>
-
 <h4> Give your pokemon a more exciting name! </h4>
-<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-<img src="<%=@pokemon.photo%>" style="width: 50%;"><br><br>
-
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <img src="<%=@pokemon.photo%>" style="width: 50%;"><br><br>
 
 <form method="post" action="/pokemon/<%=@pokemon.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
@@ -11,4 +9,4 @@
   <input type="submit" value="Rename Pokemon!">
 </form>
 
-</div>
+  </div>

@@ -1,12 +1,11 @@
 <h1>Welcome! <%= @trainer.name %> </h1>
+  <div class="col-sm-3">
+      <img src="<%=@trainer.photo%>" style="width:70%;">
+  </div>  <!--ends col-sm-3-->
 
-<div class="col-sm-3">
-        <img src="<%=@trainer.photo%>" style="width:70%;">
-</div>  <!--ends col-sm-6-->
-
-<div class="col-sm-9">
-<table style="width:100%">
-  <tr>
+  <div class="col-sm-9">
+    <table style="width:100%">
+        <tr>
           <th>Trainer <br>Name:</th>
           <th>Trainer <br>Username:</th>
           <th>Trainer Bio:</th>
@@ -16,58 +15,59 @@
           <td><%= @trainer.username%></td>
           <td>
           <%=@trainer.bio%>
-        </td>
+         </td>
         </tr>
-      </table>
-</div>  <!--ends col-sm-6-->
+     </table>
+   </div>  <!--ends col-sm-9-->
 
-<div class="col-sm-12">
-<div class="col-sm-6">
-      <a href="/pokemon/new"><button class="buttoner button19">CATCH POKEMON!</button></a>
-</div> <!--ends col-sm-6-->
+	<div class="col-sm-12">
+		<div class="col-sm-6">
+			<a href="/pokemon/new"><button class="buttoner button19">CATCH POKEMON!</button></a>
+		</div> <!--ends col-sm-6-->
 
-<div class="col-sm-6">
-  <a href="/trainer/<%=@trainer.id%>/edit"><button class="buttoner button20">EDIT TRAINER BIO?</button></a>
-      </div> <!--ends col-sm-6-->
-      </div> <!-- ends col-sm-12 -->
+		<div class="col-sm-6">
+			<a href="/trainer/<%=@trainer.id%>/edit"><button class="buttoner button20">EDIT TRAINER BIO?</button></a>
+		</div> <!--ends col-sm-6-->
+	   </div> <!-- ends col-sm-12 -->
 
-<div class="col-sm-12">
+	<div class="col-sm-12">
   <h2> Your current Pokemon are: </h2>
-</div>
-  <% @pokemons.each do |pokemon| %>
-  <div class="col-sm-12">
-  	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <h3><%= pokemon.name %></h3>
-            <img src="<%=pokemon.photo%>" style="width: 50%;"><br>
-            <a href="/pokemon/<%=pokemon.id%>/edit"><button type="submit" class="btn btn-default">Rename Pokemon</button></a>
-            <form method="post" action="/pokemon/<%=pokemon.id%>/delete">
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <button type="submit" class="btn btn-default" value="Release">Release Pokemon</button>
-      </form>
-</div> <!--ends col-sm-6-->
+	</div>
+
+<% @pokemons.each do |pokemon| %>
+	<div class="col-sm-12">
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		<h3><%= pokemon.name %></h3>
+			<img src="<%=pokemon.photo%>" style="width: 50%;"><br>
+			<a href="/pokemon/<%=pokemon.id%>/edit"><button type="submit" class="btn btn-default">Rename Pokemon</button></a>
+		<form method="post" action="/pokemon/<%=pokemon.id%>/delete">
+			<input id="hidden" type="hidden" name="_method" value="DELETE">
+			<button type="submit" class="btn btn-default" value="Release">Release Pokemon</button>
+		</form>
+	</div> <!--ends col-xs-12 col-sm-6 col-md-6 col-lg-6-->
+
 	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="display: inline-block;">
-    <h3> Pokemon Stats: </h3>
-  <table style="width:100%">
-  <tr>
-        <th>Type:</th>
-        <td><%= pokemon.breed %></td>
-  </tr>
-  <tr>
-        <th>Attacks:</th>
-        <td><%= pokemon.attacks %></td>
-  </tr>
-  <tr>
-        <th>Bio</th>
-        <td><%= pokemon.bio %></td>
-  </tr>
-</table>
+		<h3> Pokemon Stats: </h3>
+		<table style="width:100%">
+		  <tr>
+			<th>Type:</th>
+			<td><%= pokemon.breed %></td>
+		  </tr>
+		  <tr>
+			<th>Attacks:</th>
+			<td><%= pokemon.attacks %></td>
+		  </tr>
+		  <tr>
+			<th>Bio</th>
+			<td><%= pokemon.bio %></td>
+		  </tr>
+		</table>
         <br><br><br><br>
-  </div>  <!--ends col-sm-6-->
-  </div>
-  <%end%>
-  <!--ends col-sm-12-->
+	</div>  <!--ends col-xs-12 col-sm-6 col-md-6 col-lg-6-->
+  </div><!--ends col-sm-12-->
+<%end%>
 
-<div class="col-sm-12">
-  <button class="buttoner button20"></button>
 
-  </div>  <!--ends col-sm-12-->
+	<div class="col-sm-12">
+		<button class="buttoner button20"></button>
+	</div>  <!--ends col-sm-12-->

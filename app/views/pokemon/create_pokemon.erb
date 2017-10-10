@@ -1,72 +1,67 @@
 
-
      <div class="row">
-     <div class="col-sm-12">
-       <div id="loading" style="position: static; visibility:visible;">
-         <h1>Loading Pokemon! Please wait....</h1>
-       </div>
-      <div class="form-group" id="create" style="position: static; visibility:hidden;">
-        <h3>CHOOSE YOUR POKEMON! (one please!)</h3>
-        <form method="post" action="/pokemon/new">
-          <input type="checkbox" name="bio" class="radio_item pikachu"  id="pikachu_bio" value="Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.">
-          <input type="checkbox" name="attacks" class="radio_item pikachu"  id="pikachu_attacks" value="thundershock, thunder, thunderbolt, quick attack, iron-tail">
-          <input type="checkbox" name="breed" class="radio_item pikachu"  id="pikachu_breed" value="electric">
-          <input type="checkbox" name="name" class="radio_item pikachu"  id="pikachu_name" value="Pikachu">
-          <input type="checkbox" name="photo" class="radio_item pikachu" id="pikachu" value="https://i.imgur.com/1YuJldM.jpg">
-          <label class="label_item" for="pikachu"><img src="https://i.imgur.com/1YuJldM.jpg"></label>
+       <div class="col-sm-12">
+         <div id="loading" style="position: static; visibility:visible;">
+           <h1>Loading Pokemon! Please wait....</h1>
+         </div>
+       <div class="form-group" id="create" style="position: static; visibility:hidden;">
+          <h3>CHOOSE YOUR POKEMON! (one please!)</h3>
+          <form method="post" action="/pokemon/new">
+            <input type="checkbox" name="bio" class="radio_item pikachu"  id="pikachu_bio" value="Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.">
+            <input type="checkbox" name="attacks" class="radio_item pikachu"  id="pikachu_attacks" value="thundershock, thunder, thunderbolt, quick attack, iron-tail">
+            <input type="checkbox" name="breed" class="radio_item pikachu"  id="pikachu_breed" value="electric">
+            <input type="checkbox" name="name" class="radio_item pikachu"  id="pikachu_name" value="Pikachu">
+            <input type="checkbox" name="photo" class="radio_item pikachu" id="pikachu" value="https://i.imgur.com/1YuJldM.jpg">
+            <label class="label_item" for="pikachu"><img src="https://i.imgur.com/1YuJldM.jpg"></label>
 
-          <input type="checkbox" name="bio" class="radio_item staryu"  id="staryu_bio" value="Staryu is a golden-brown sea star-like Pokémon with five appendages. These appendages surround an exterior organ called the core, which is held in place by a golden ring looped around Staryu's left "leg". If any of Staryu's appendages are lost, it can grow them back with ease provided the core is still intact. The core resembles a red jewel and is similar to a madreporite. Staryu is a natural prey of some species of Pokémon, including Lumineon. However, due to its regenerative abilities, being preyed upon does not negatively affect it.
-When the sun goes down, the core glows its brightest. Many will float from the seafloor to the surface and align themselves with stars of the night sky as their core flickers, displaying a connection with the celestial bodies of space">
-          <input type="checkbox" name="attacks" class="radio_item staryu"  id="staryu_attacks" value="water gun, bubble beam, power gem, tackle, swift">
-          <input type="checkbox" name="breed" class="radio_item staryu"  id="staryu_type" value="water">
-          <input type="checkbox" name="name" class="radio_item staryu"  id="staryu_name" value="Staryu">
-          <input type="checkbox" name="photo" class="radio_item staryu" id="staryu" value="https://i.imgur.com/s3Mh5Xx.png">
-          <label class="label_item" for="staryu"><img src="https://i.imgur.com/s3Mh5Xx.png"></label>
-
-
-          <input type="checkbox" name="bio" class="radio_item charmander"  id="charmander_bio" value="Charmander is a bipedal, reptilian Pokémon with a primarily orange body. Its underside from the chest down and soles are cream-colored. It has two small fangs visible in its upper jaw and two smaller fangs in its lower jaw. Charmander has blue eyes. Its arms and legs are short with four fingers and three clawed toes. A fire burns at the tip of this Pokémon's slender tail, and has blazed there since Charmander's birth.
-          The flame can be used as an indication of Charmander's health and mood, burning brightly when the Pokémon is strong, weakly when it is exhausted, wavering when it is happy, and blazing when it is enraged. It is said that Charmander dies if its flame goes out. However, if the Pokémon is healthy, the flame will continue to burn if gets a bit wet and is said to steam in the rain.">
-          <input type="checkbox" name="attacks" class="radio_item charmander"  id="charmander_attacks" value="thundershock, thunder, thunderbolt, quick attack, iron-tail">
-          <input type="checkbox" name="breed" class="radio_item charmander"  id="charmander_type" value="fire">
-          <input type="checkbox" name="name" class="radio_item charmander"  id="charmander_name" value="Charmander">
-          <input type="checkbox" name="photo" class="radio_item charmander" id="charmander" value="https://i.imgur.com/woWI0th.png">
-          <label class="label_item" for="charmander"><img src="https://i.imgur.com/woWI0th.png"></label>
-
-          <input type="checkbox" name="bio" class="radio_item squirtle"  id="squirtle_bio" value="Squirtle is a small Pokémon that resembles a light blue turtle. Squirtle's shell is a useful tool. It can withdraw into the shell for protection or for sleeping, and its grooved, rounded shape helps to reduce water resistance when this Pokémon swims. Squirtle can spray foamy water from its mouth with great accuracy.">
-          <input type="checkbox" name="attacks" class="radio_item squirtle"  id="squirtle_attacks" value="bubble, tackle,aqua jet, aqua tail, water pulse">
-          <input type="checkbox" name="breed" class="radio_item squirtle"  id="squirtle_type" value="water">
-          <input type="checkbox" name="name" class="radio_item squirtle"  id="squirtle_name" value="Squirtle">
-          <input type="checkbox" name="photo" class="radio_item squirtle" id="squirtle" value="https://i.imgur.com/GbHawsf.png">
-          <label class="label_item" for="squirtle"><img src="https://i.imgur.com/GbHawsf.png"></label>
-
-          <input type="checkbox" name="bio" class="radio_item bulbasaur"  id="bulbasaur_bio" value="It has been observed that a Bulbasaur's bulb will flash blue when it is ready to evolve. If it does not want to evolve, it struggles to resist the transformation. Many Bulbasaur gather every year in a hidden garden in Kanto to evolve into Ivysaur in a ceremony led by a Venusaur.">
-          <input type="checkbox" name="attacks" class="radio_item bulbasaur"  id="bulbasaur_attacks" value="vine whip, tackle, sludge bomb, razor blade, seed bomb, power whip">
-          <input type="checkbox" name="breed" class="radio_item bulbasaur"  id="bulbasaur_type" value="grass">
-          <input type="checkbox" name="name" class="radio_item bulbasaur"  id="bulbasaur_name" value="Bulbasaur">
-          <input type="checkbox" name="photo" class="radio_item bulbasaur" id="bulbasaur" value="https://i.imgur.com/ucPigWI.jpg">
-          <label class="label_item" for="bulbasaur"><img src="https://i.imgur.com/ucPigWI.jpg"></label>
-
-          <input type="checkbox" name="bio" class="radio_item abra"  id="abra_bio" value="Abra can sense danger by reading minds. When it does, it teleports itself to a safe location so quickly that it creates the illusion of having made copies of itself. By hypnotizing itself, Abra is able to teleport or use any of its other extrasensory abilities at any time. Due to the strain of its telepathic powers, however, Abra sleeps 18 hours each day. If it fails to rest long enough, it will become unable to use its powers. Abra lives in urban areas, but has been observed to teleport to a different location once per hour.">
-          <input type="checkbox" name="attacks" class="radio_item abra"  id="abra_attacks" value="psyshock, shadow ball, zen headbutt, charge beam, signal beam">
-          <input type="checkbox" name="breed" class="radio_item abra"  id="abra_type" value="pyschic">
-          <input type="checkbox" name="name" class="radio_item abra"  id="abra_name" value="Abra">
-          <input type="checkbox" name="photo" class="radio_item abra" id="abra" value="https://i.imgur.com/NgITML5.png">
-          <label class="label_item" for="abra"><img src="https://i.imgur.com/NgITML5.png"></label>
-
-          <input type="checkbox" name="bio" class="radio_item eevee"  id="eevee_bio" value=" This Pokémon is rarely found in the wild, and is mostly only found in cities and towns. However, Eevee is said to have an irregularly shaped genetic structure that allows it to adapt to many different kinds of environments. Eventually, Eevee may evolve to better suit its surroundings. According to Pokémon Mystery Dungeon, Eevee has a naive personality.">
-          <input type="checkbox" name="attacks" class="radio_item eevee"  id="eevee_attacks" value="quick attack, tackle, dig, swift, body slam">
-          <input type="checkbox" name="breed" class="radio_item eevee"  id="eevee_type" value="basic">
-          <input type="checkbox" name="name" class="radio_item eevee"  id="eevee_name" value="Eevee">
-          <input type="checkbox" name="photo" class="radio_item eevee" id="eevee" value="https://i.imgur.com/zm4Ltdf.png">
-          <label class="label_item" for="eevee"><img src="https://i.imgur.com/zm4Ltdf.pngg"></label>
+            <input type="checkbox" name="bio" class="radio_item staryu"  id="staryu_bio" value="Staryu is a golden-brown sea star-like Pokémon with five appendages. These appendages surround an exterior organ called the core, which is held in place by a golden ring looped around Staryu's left "leg". If any of Staryu's appendages are lost, it can grow them back with ease provided the core is still intact. The core resembles a red jewel and is similar to a madreporite. Staryu is a natural prey of some species of Pokémon, including Lumineon. However, due to its regenerative abilities, being preyed upon does not negatively affect it.
+  When the sun goes down, the core glows its brightest. Many will float from the seafloor to the surface and align themselves with stars of the night sky as their core flickers, displaying a connection with the celestial bodies of space">
+            <input type="checkbox" name="attacks" class="radio_item staryu"  id="staryu_attacks" value="water gun, bubble beam, power gem, tackle, swift">
+            <input type="checkbox" name="breed" class="radio_item staryu"  id="staryu_type" value="water">
+            <input type="checkbox" name="name" class="radio_item staryu"  id="staryu_name" value="Staryu">
+            <input type="checkbox" name="photo" class="radio_item staryu" id="staryu" value="https://i.imgur.com/s3Mh5Xx.png">
+            <label class="label_item" for="staryu"><img src="https://i.imgur.com/s3Mh5Xx.png"></label>
 
 
+            <input type="checkbox" name="bio" class="radio_item charmander"  id="charmander_bio" value="Charmander is a bipedal, reptilian Pokémon with a primarily orange body. Its underside from the chest down and soles are cream-colored. It has two small fangs visible in its upper jaw and two smaller fangs in its lower jaw. Charmander has blue eyes. Its arms and legs are short with four fingers and three clawed toes. A fire burns at the tip of this Pokémon's slender tail, and has blazed there since Charmander's birth.
+            The flame can be used as an indication of Charmander's health and mood, burning brightly when the Pokémon is strong, weakly when it is exhausted, wavering when it is happy, and blazing when it is enraged. It is said that Charmander dies if its flame goes out. However, if the Pokémon is healthy, the flame will continue to burn if gets a bit wet and is said to steam in the rain.">
+            <input type="checkbox" name="attacks" class="radio_item charmander"  id="charmander_attacks" value="thundershock, thunder, thunderbolt, quick attack, iron-tail">
+            <input type="checkbox" name="breed" class="radio_item charmander"  id="charmander_type" value="fire">
+            <input type="checkbox" name="name" class="radio_item charmander"  id="charmander_name" value="Charmander">
+            <input type="checkbox" name="photo" class="radio_item charmander" id="charmander" value="https://i.imgur.com/woWI0th.png">
+            <label class="label_item" for="charmander"><img src="https://i.imgur.com/woWI0th.png"></label>
 
-      </div>
-      </div>
+            <input type="checkbox" name="bio" class="radio_item squirtle"  id="squirtle_bio" value="Squirtle is a small Pokémon that resembles a light blue turtle. Squirtle's shell is a useful tool. It can withdraw into the shell for protection or for sleeping, and its grooved, rounded shape helps to reduce water resistance when this Pokémon swims. Squirtle can spray foamy water from its mouth with great accuracy.">
+            <input type="checkbox" name="attacks" class="radio_item squirtle"  id="squirtle_attacks" value="bubble, tackle,aqua jet, aqua tail, water pulse">
+            <input type="checkbox" name="breed" class="radio_item squirtle"  id="squirtle_type" value="water">
+            <input type="checkbox" name="name" class="radio_item squirtle"  id="squirtle_name" value="Squirtle">
+            <input type="checkbox" name="photo" class="radio_item squirtle" id="squirtle" value="https://i.imgur.com/GbHawsf.png">
+            <label class="label_item" for="squirtle"><img src="https://i.imgur.com/GbHawsf.png"></label>
 
-      <div class="form-group" style="padding-right: 10px; position: static;">
-          <button type="submit" class="btn btn-default" id="button3">Submit</button>
-        </form>
-      </div>
+            <input type="checkbox" name="bio" class="radio_item bulbasaur"  id="bulbasaur_bio" value="It has been observed that a Bulbasaur's bulb will flash blue when it is ready to evolve. If it does not want to evolve, it struggles to resist the transformation. Many Bulbasaur gather every year in a hidden garden in Kanto to evolve into Ivysaur in a ceremony led by a Venusaur.">
+            <input type="checkbox" name="attacks" class="radio_item bulbasaur"  id="bulbasaur_attacks" value="vine whip, tackle, sludge bomb, razor blade, seed bomb, power whip">
+            <input type="checkbox" name="breed" class="radio_item bulbasaur"  id="bulbasaur_type" value="grass">
+            <input type="checkbox" name="name" class="radio_item bulbasaur"  id="bulbasaur_name" value="Bulbasaur">
+            <input type="checkbox" name="photo" class="radio_item bulbasaur" id="bulbasaur" value="https://i.imgur.com/ucPigWI.jpg">
+            <label class="label_item" for="bulbasaur"><img src="https://i.imgur.com/ucPigWI.jpg"></label>
+
+            <input type="checkbox" name="bio" class="radio_item abra"  id="abra_bio" value="Abra can sense danger by reading minds. When it does, it teleports itself to a safe location so quickly that it creates the illusion of having made copies of itself. By hypnotizing itself, Abra is able to teleport or use any of its other extrasensory abilities at any time. Due to the strain of its telepathic powers, however, Abra sleeps 18 hours each day. If it fails to rest long enough, it will become unable to use its powers. Abra lives in urban areas, but has been observed to teleport to a different location once per hour.">
+            <input type="checkbox" name="attacks" class="radio_item abra"  id="abra_attacks" value="psyshock, shadow ball, zen headbutt, charge beam, signal beam">
+            <input type="checkbox" name="breed" class="radio_item abra"  id="abra_type" value="pyschic">
+            <input type="checkbox" name="name" class="radio_item abra"  id="abra_name" value="Abra">
+            <input type="checkbox" name="photo" class="radio_item abra" id="abra" value="https://i.imgur.com/NgITML5.png">
+            <label class="label_item" for="abra"><img src="https://i.imgur.com/NgITML5.png"></label>
+
+            <input type="checkbox" name="bio" class="radio_item eevee"  id="eevee_bio" value=" This Pokémon is rarely found in the wild, and is mostly only found in cities and towns. However, Eevee is said to have an irregularly shaped genetic structure that allows it to adapt to many different kinds of environments. Eventually, Eevee may evolve to better suit its surroundings. According to Pokémon Mystery Dungeon, Eevee has a naive personality.">
+            <input type="checkbox" name="attacks" class="radio_item eevee"  id="eevee_attacks" value="quick attack, tackle, dig, swift, body slam">
+            <input type="checkbox" name="breed" class="radio_item eevee"  id="eevee_type" value="basic">
+            <input type="checkbox" name="name" class="radio_item eevee"  id="eevee_name" value="Eevee">
+            <input type="checkbox" name="photo" class="radio_item eevee" id="eevee" value="https://i.imgur.com/zm4Ltdf.png">
+            <label class="label_item" for="eevee"><img src="https://i.imgur.com/zm4Ltdf.pngg"></label>
+
+        </div> <!--ends form group-->
+       </div> <!-- ends col-sm-12-->
+
+            <button type="submit" class="btn btn-default" id="button3">Submit</button>
+
      </div>
